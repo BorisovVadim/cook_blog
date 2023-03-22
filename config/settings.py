@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     'mptt',  # django-mtpp
+    'ckeditor',  # django-CKEditor
 
     'blog',
 ]
@@ -121,3 +122,5 @@ STATICFILES_DIRS = [STATIC_DIR]  # все директории статик-фа
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+CKEDITOR_UPLOAD_PATH = "uploads/"  # указываем директорию для хранения медиа-файлов при загрузке через CKEditor
