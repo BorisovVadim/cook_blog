@@ -14,6 +14,8 @@ class PostAdmin(admin.ModelAdmin):
     """Класс для отображения указанных полей в админке в постах"""
     list_display = ['title', 'category', 'author', 'create_at', 'id']
     inlines = [RecipeInline]  # добавляем возможность создания рецепта в посте
+    save_as = True  # позволяет сохранять существующий пост как новый
+    save_on_top = True  # добавляет панель сохранения вверх страницы
 
 
 @admin.register(models.Recipe)
