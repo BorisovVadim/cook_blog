@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'ckeditor',  # django-CKEditor
 
     'blog',
+    'contact',
 ]
 
 MIDDLEWARE = [

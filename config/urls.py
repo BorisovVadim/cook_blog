@@ -6,7 +6,8 @@ from django.urls import path, include
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('ckeditor/', include('ckeditor_uploader.urls')),  # подключаем CKEditor
-    path('', include('blog.urls'))
+    path('', include('contact.urls')),
+    path('', include('blog.urls')),
 ]
 
 if settings.DEBUG:  # Если DEBUG True, статику и медиа раздает Django
