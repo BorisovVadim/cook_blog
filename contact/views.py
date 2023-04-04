@@ -3,7 +3,7 @@ from django.views import View
 from django.views.generic import CreateView
 
 from .forms import ContactForm
-from .models import ContactLink
+from .models import ContactLink, About
 
 
 class ContactView(View):
@@ -17,3 +17,10 @@ class ContactView(View):
 class CreateContact(CreateView):
     form_class = ContactForm
     success_url = '/'
+
+
+class AboutView(View):
+
+    def get(self, request):
+        about = About.objects.last()
+        return render(request, 'contact/about.html', {'about': about})
