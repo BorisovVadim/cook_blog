@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% load social_tags %}
 
 {% block content %}
 <section class="about spad">
@@ -32,10 +33,16 @@
                     <div class="about__right__text">
                         {{ about.text|safe }}
                         <div class="about__right__text__social">
-                            <a href="#"><i class="fa fa-facebook"></i></a>
-                            <a href="#"><i class="fa fa-twitter"></i></a>
-                            <a href="#"><i class="fa fa-youtube-play"></i></a>
-                            <a href="#"><i class="fa fa-instagram"></i></a>
+                            {% get_social_links as social_links %}
+                            {% for item in social_links %}
+                                <a href="{{ item.link }}"><img src="{{ item.icon.url }}"></a>
+                            {% endfor %}
+
+
+
+<!--                            <a href="#"><i class="fa fa-twitter"></i></a>-->
+<!--                            <a href="#"><i class="fa fa-youtube-play"></i></a>-->
+<!--                            <a href="#"><i class="fa fa-instagram"></i></a>-->
                         </div>
                     </div>
                 </div>
