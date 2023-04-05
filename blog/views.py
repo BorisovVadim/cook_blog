@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.views.generic import ListView, DetailView
 
+from .forms import CommentForm
 from .models import Post
 
 
@@ -23,3 +24,8 @@ class PostDetailView(DetailView):
     model = Post
     context_object_name = 'post'  # Определяем название объекта в шаблоне
     slug_url_kwarg = 'post_slug'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['form'] = CommentForm()
+        return context
